@@ -1,4 +1,2 @@
-# GTA5-Mods
-Here are all my gta 5 mods located
-
-To install my mods follow the given instructions
+#Micheal's Family Remover
+This mod simply deletes all Micheal's family member from the game.
