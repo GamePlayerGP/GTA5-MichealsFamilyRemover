@@ -1,0 +1,52 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using GTA;
+using GTA.Native;
+using GTA.UI;
+
+public class RemoveMichealsFamily : Script
+{
+    // Variables
+    private Ped tracy, amanda, jimmy, eva; // Ped variables
+
+    public RemoveMichealsFamily()
+    {
+        Tick += OnTick;
+        
+        Notification.Show("Michael's Family Remover v1.0 loaded ~g~successfully"); // Messaging the user that the mod loaded successfully
+        
+        
+    }
+
+    private void OnTick(object sender, EventArgs e)
+    {
+        // Finding the Peds
+        tracy = World.GetClosestPed(Game.Player.Character.Position, 100f, PedHash.TracyDisanto);
+        amanda = World.GetClosestPed(Game.Player.Character.Position, 100f, PedHash.AmandaTownley);
+        jimmy = World.GetClosestPed(Game.Player.Character.Position, 100f, PedHash.JimmyDisanto);
+        eva = World.GetClosestPed(Game.Player.Character.Position, 100f, PedHash.Maid01SFM);
+
+
+        // Deleting the Peds
+        if (jimmy != null && jimmy.Exists())
+        {
+            jimmy.Delete();
+        }
+
+        if (amanda != null && amanda.Exists())
+        {
+            amanda.Delete();
+        }
+
+        if (tracy != null && tracy.Exists())
+        {
+            tracy.Delete();
+        }
+
+        if (eva != null && eva.Exists())
+        {
+            eva.Delete();
+        }
+    }
+}
